@@ -1,0 +1,37 @@
+{
+    "version": 2,
+    "builds": [
+        { "src": "/api/index.php", "use": "vercel-php@0.5.4" },
+        { "src": "/public/**", "use": "@vercel/static" }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_NAME": "Vercel Laravel",
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://koala42-assessment-master.vercel.app",
+        "API_URL": "https://airmonitor.k42.app",
+        "API_TOKEN": "37BnlLu_FSDxEscl5oLZ6AAMPl7wjo64",
+        "VERCEL_DEMO_MODE": "true",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "array",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
+    }
+}

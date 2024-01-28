@@ -1,0 +1,25 @@
+.measurments th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: #04AA6D;
+}
+
+.most-recent .element {
+    border-width: var(--bs-border-width);
+    border-color: var(--bs-border-color);
+    border-style: var(--bs-border-style);
+
+    padding: 0.75rem 0.5rem;
+}
+
+.green-bg-color {
+    background-color: #04AA6D;
+}
+
+.grid-two-columns {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-five-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
