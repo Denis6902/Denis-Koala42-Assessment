@@ -8,13 +8,14 @@ class AirControlController
 {
     private Client $client;
 
-    function __construct() {
+    function __construct()
+    {
         $this->client = new Client([
-            'base_uri' => env('API_URL'),
-            'headers' =>
-                [
-                    'Authorization' => "Bearer " . env('API_TOKEN')
-                ]
+                'base_uri' => env('API_URL'),
+                'headers' =>
+                    [
+                        'Authorization' => "Bearer " . env('API_TOKEN')
+                    ]
             ]
         );
     }
@@ -27,7 +28,7 @@ class AirControlController
         ]);
     }
 
-    function getRecentData(string $sort = "sort,-date_updated,-date_created") : object
+    function getRecentData(string $sort = "sort,-date_updated,-date_created"): object
     {
         $responseRecent = $this->client->get(
             '/items/measurments?limit=1' . '&sort=' . $sort
@@ -36,7 +37,7 @@ class AirControlController
         return json_decode($responseRecent)->data[0];
     }
 
-    function getData(int $limit = 20, int $offset = 1, string $sort = "sort,-date_updated,-date_created") : array
+    function getData(int $limit = 20, int $offset = 1, string $sort = "sort,-date_updated,-date_created"): array
     {
         $responseData = $this->client->get(
             '/items/measurments?offset=' . $offset . '&limit=' . $limit . '&sort=' . $sort
